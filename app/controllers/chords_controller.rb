@@ -1,23 +1,34 @@
+require 'coltrane'
+
 class ChordsController < ApplicationController
   include Coltrane::Theory
 
-  def index
-    @chords = nil
+  def find_by_notes
+    @chord = nil
+    @error = nil
   end
 
   def search
     if params[:query].present?
       search_notes = params[:query].strip.split(' ')
-      @chords = Chord.new(notes: search_notes)
-    else
-      @chords = []
+      @chord = Chord.new(notes: search_notes)
     end
 
     render turbo_stream: turbo_stream.replace(
-      'chords',
-      partial: 'list',
+      'chord',
+      partial: 'chord_summary',
       locals: {
-        chords: @chords
+        chord: @chord,
+        error: nil
+      }
+    )
+  rescue StandardError => e
+    render turbo_stream: turbo_stream.replace(
+      'chord',
+      partial: 'chord_summary',
+      locals: {
+        chord: nil,
+        error: e.message
       }
     )
   end

@@ -1,0 +1,80 @@
+.piano {
+  height: 18.875em;
+  width: 62em;
+  margin: 5em auto;
+  padding: 3em;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.key {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.piano .white {
+  height: 16em;
+  width: 4em;
+  z-index: 1;
+  border-left: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom,#eee 0%,#fff 100%);
+}
+
+.piano .black {
+  height: 8em;
+  width: 2em;
+  margin: 0 0 0 -1em;
+  z-index: 2;
+  border: 1px solid #000;
+  border-radius: 0 0 3px 3px;
+  box-sizing: border-box;
+  background: linear-gradient(45deg,#222 0%,#555 100%);
+}
+
+.g,.a,.b,.d,.e {
+  margin: 0 0 0 -1em;
+  box-sizing: border-box;
+}
+
+.piano .key: first-child {
+  border-radius: 5px 0 5px 5px;
+  box-sizing: border-box;
+}
+
+.piano .key: last-child {
+  border-radius: 0 5px 5px 5px;
+  box-sizing: border-box;
+}
+
+.piano .white span {
+  position: absolute;
+  bottom: 10px;
+  left: 25px;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.piano .black span {
+  position: absolute;
+  bottom: 10px;
+  left: 6px;
+  color: #fff;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.piano .white.selected {
+  background: linear-gradient(to bottom,#a5f296 0%,#fff 100%);
+}
+
+.piano .black.selected {
+  background: linear-gradient(to bottom,#a5f296 0%,#000 100%);
+}

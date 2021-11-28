@@ -46,7 +46,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # gem 'image_processing', '~> 1.2'
 
 # https://github.com/pedrozath/coltrane/wiki/Core-music-theory-library
-gem 'coltrane', require: true
+gem 'coltrane', ' ~> 4.1'
 
 group :development, :test do
   # Start debugger with binding.b [https://github.com/ruby/debug]

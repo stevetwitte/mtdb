@@ -209,7 +209,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   capybara (>= 3.26)
-  coltrane
+  coltrane (~> 4.1)
   debug (>= 1.0.0)
   importmap-rails (>= 0.3.4)
   jbuilder (~> 2.7)
