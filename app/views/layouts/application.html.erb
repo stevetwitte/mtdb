@@ -12,7 +12,21 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <header class="flex px-24 py-4 items-end bg-gray-200">
+      <h1 class="font-sans ml-6 text-lg text-gray-800 leading-tight">music<br>theory<br>db</h1>
+      <nav class="ml-24">
+        <ul>
+          <li class="inline-block mx-4 text-center"><%= image_tag 'glyphicons-basic-422-book-library', class: 'h-10 m-auto' %><span>reference</span></li>
+          <li class="inline-block mx-4 text-center"><%= image_tag 'glyphicons-basic-73-bookmark', class: 'h-10 m-auto' %><span>library</span></li>
+          <li class="inline-block mx-4 text-center"><%= image_tag 'glyphicons-basic-5-settings', class: 'h-10 m-auto' %><span>tools</span></li>
+          <li class="inline-block mx-4 text-center"><%= image_tag 'glyphicons-basic-137-cogwheel', class: 'h-10 m-auto' %><span>settings</span></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="bg-gray-700 text-gray-200 p-2 pl-24">
+      <span class="ml-6">tools > chord finder</span>
+    </div>
+    <main class="container">
       <%= yield %>
     </main>
   </body>

@@ -1,8 +1,17 @@
 <div id="chord">
-  <% if chord.present? %>
-    <%= chord.name %>
-  <% end %>
-  <% if error.present? %>
-    <%= error %>
-  <% end %>
+  <div class="m-auto text-center max-w-4xl">
+
+    <% if chord.present? %>
+      <span class="text-6xl font-sans font-medium">
+        <%= chord.name %>
+      </span>
+    <% end %>
+
+    <% if error.present? %>
+      <span class="text-2xl font-sans">
+        <%= error %>
+      </span>
+    <% end %>
+
+  </div>
 </div>
