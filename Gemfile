@@ -4,7 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.0.0.alpha2'
+gem "rails", "~> 7.0.0.rc1"
+
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails", ">= 3.4.1"
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -13,19 +16,19 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem 'importmap-rails', '>= 0.3.4'
+gem "importmap-rails", ">= 0.9.2"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails', '~> 0.9'
+gem "turbo-rails", ">= 0.9.0"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails', '>= 0.4.0'
+gem "stimulus-rails", ">= 0.7.3"
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem 'tailwindcss-rails', '>= 0.4.3'
+gem "tailwindcss-rails", ">= 0.5.3"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem 'jbuilder', '~> 2.7'
+gem "jbuilder", "~> 2.11"
 
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
