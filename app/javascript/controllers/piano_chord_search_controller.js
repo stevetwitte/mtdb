@@ -27,8 +27,12 @@ export default class extends Controller {
 
     } else {
 
+      let note = new Audio('audio/piano/' + targetElement.dataset.keyName + '.mp3');
+      note.play();
+
       this.selectedNotes.push(targetElement.dataset.keyName);
       targetElement.classList.add('selected');
+
     }
 
     if (this.selectedNotes.length >= 3) {
@@ -38,7 +42,9 @@ export default class extends Controller {
 
   submitSearch() {
     let form = document.querySelector('form');
-    form.elements.query.value = this.selectedNotes.toString().replaceAll(',', ' ');
+    form.elements.query.value = this.selectedNotes.map(function (e) {
+      return e.substring(0, e.length - 1);
+    }).toString().replaceAll(',', ' ');
     form.requestSubmit();
   }
 }
