@@ -7,9 +7,6 @@
       <% end %>
     </div>
 
-    <!-- TODO: move this assignment to controller -->
-    <% note_names = scale.notes.map(&:name) if scale.present? %>
-
     <ul data-action="click->piano-scale-search#key" class="piano">
       <% 2.times do %>
         <li data-key-name="F" class="key white f <%= 'selected' if root_note == 'F' %> <%= 'in-scale' if note_names&.include?('F') %>">

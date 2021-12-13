@@ -5,8 +5,6 @@ class ScalesController < ApplicationController
 
   def find_by_root_note
     @scale_types = Scale.standard_scales
-    @scale = nil
-    @error = nil
   end
 
   def search
@@ -16,6 +14,22 @@ class ScalesController < ApplicationController
       @root_note = params[:query].strip
       @scale_type = params[:scale_type].strip
       @scale = Scale.fetch(@scale_type, @root_note)
+
+      # TODO: This should be fixed in coltrane or in a wrapper
+      @note_names = @scale.notes.map do |n|
+        case n.name
+        when 'B#'
+          'C'
+        when 'C##'
+          'D'
+        when 'E#'
+          'F'
+        when 'F##'
+          'G'
+        else
+          n.name
+        end
+      end
     end
 
     render turbo_stream: turbo_stream.replace(
@@ -23,6 +37,7 @@ class ScalesController < ApplicationController
       partial: 'scale_summary',
       locals: {
         scale: @scale,
+        note_names: @note_names,
         scale_types: @scale_types,
         root_note: @root_note,
         scale_type: @scale_type,
@@ -35,6 +50,7 @@ class ScalesController < ApplicationController
       partial: 'scale_summary',
       locals: {
         scale: nil,
+        note_names: nil,
         scale_types: @scale_types,
         root_note: @root_note,
         scale_type: @scale_type,
