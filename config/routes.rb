@@ -7,4 +7,11 @@ Rails.application.routes.draw do
       post 'search'
     end
   end
+
+  resources :scales, only: [] do
+    collection do
+      get 'find-by-root-note', to: 'scales#find_by_root_note'
+      post 'search'
+    end
+  end
 end

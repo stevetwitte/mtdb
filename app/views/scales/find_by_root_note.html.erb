@@ -1,12 +1,13 @@
 <div class="m-auto">
-  <div class="m-auto" data-controller="piano-chord-search">
-    <div>
-      <%= form_with(url: search_chords_path) do |form| %>
+  <div class="m-auto" data-controller="piano-scale-search">
+    <div class="text-center pt-24">
+      <%= form_with(url: search_scales_path) do |form| %>
+        <%= form.select :scale_type, options_for_select(@scale_types) %>
         <%= form.text_field :query, hidden: true %>
       <% end %>
     </div>
 
-    <ul data-action="click->piano-chord-search#key" class="piano">
+    <ul data-action="click->piano-scale-search#key" class="piano">
       <li data-key-name="F" class="key white f"><span>F</span></li>
       <li data-key-name="F#" class="key black fs"><span>F#</span></li>
       <li data-key-name="G" class="key white g"><span>G</span></li>
@@ -34,5 +35,5 @@
     </ul>
   </div>
 
-  <%= render "chord_summary", chord: @chord, error: @error %>
+  <%= render "scale_summary", scale: @scale, error: @error %>
 </div>

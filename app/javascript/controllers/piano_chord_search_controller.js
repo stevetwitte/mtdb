@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 
-// Connects to data-controller="piano-search"
+// Connects to data-controller="piano-chord-search"
 export default class extends Controller {
   connect() {
     this.selectedNotes = [];
