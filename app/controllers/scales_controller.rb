@@ -10,10 +10,12 @@ class ScalesController < ApplicationController
   end
 
   def search
+    @scale_types = Scale.standard_scales
+
     if params[:query].present?
-      root_note = params[:query].strip
-      scale_type = params[:scale_type].strip
-      @scale = Scale.fetch(scale_type, root_note)
+      @root_note = params[:query].strip
+      @scale_type = params[:scale_type].strip
+      @scale = Scale.fetch(@scale_type, @root_note)
     end
 
     render turbo_stream: turbo_stream.replace(
@@ -21,6 +23,9 @@ class ScalesController < ApplicationController
       partial: 'scale_summary',
       locals: {
         scale: @scale,
+        scale_types: @scale_types,
+        root_note: @root_note,
+        scale_type: @scale_type,
         error: nil
       }
     )
@@ -30,6 +35,9 @@ class ScalesController < ApplicationController
       partial: 'scale_summary',
       locals: {
         scale: nil,
+        scale_types: @scale_types,
+        root_note: @root_note,
+        scale_type: @scale_type,
         error: e.message
       }
     )

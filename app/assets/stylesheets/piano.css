@@ -72,9 +72,17 @@
 }
 
 .piano .white.selected {
-  background: linear-gradient(to bottom,#a5f296 0%,#fff 100%);
+  background: linear-gradient(to bottom,#a5f296 0%,#fff 100%) !important;
 }
 
 .piano .black.selected {
-  background: linear-gradient(to bottom,#a5f296 0%,#000 100%);
+  background: linear-gradient(to bottom,#a5f296 0%,#000 100%) !important;
+}
+
+.piano .white.in-scale {
+  background: linear-gradient(to bottom,#96d4f2 0%,#fff 100%);
+}
+
+.piano .black.in-scale {
+  background: linear-gradient(to bottom,#96d4f2 0%,#000 100%);
 }
