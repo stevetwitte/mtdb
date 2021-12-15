@@ -10,21 +10,31 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <header class="flex px-24 py-4 items-end bg-gray-200">
-      <h1 class="font-sans ml-6 text-lg text-gray-800 leading-tight">music<br>theory<br>db</h1>
-      <nav class="ml-24">
-        <ul>
-          <li class="inline-block mx-4 text-center"><%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-10 m-auto' %><span>reference</span></li>
-          <li class="inline-block mx-4 text-center"><%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-10 m-auto' %><span>library</span></li>
-          <li class="inline-block mx-4 text-center"><%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-10 m-auto' %><span>tools</span></li>
-          <li class="inline-block mx-4 text-center"><%= image_tag 'glyphicons-basic-137-cogwheel.svg', class: 'h-10 m-auto' %><span>settings</span></li>
-        </ul>
+  <body class="bg-slate-400">
+    <header class="px-24 py-4 items-center bg-slate-200">
+      <nav class="flex items-end">
+        <h1 class="font-sans font-medium ml-6 text-lg text-slate-800 leading-tight">MUSIC THEORY DB</h1>
+        <div class="mx-4 text-center ml-24">
+          <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-6 m-auto' %>
+        </div>
+        <div class="mx-4 text-center">
+          <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-6 m-auto' %>
+        </div>
+        <div class="mx-4 text-center">
+          <%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-6 m-auto' %>
+        </div>
+        <div class="mx-4 text-center">
+          <%= image_tag 'glyphicons-basic-137-cogwheel.svg', class: 'h-6 m-auto' %>
+        </div>
       </nav>
     </header>
-    <div class="bg-gray-700 text-gray-200 p-2 pl-24">
-      <span class="ml-6">tools > chord finder</span>
-    </div>
+    <% if @breadcrumbs.present? %>
+      <div class="bg-slate-700 text-slate-200 p-2 pl-24">
+        <span class="ml-6">
+          <%= @breadcrumbs.html_safe %>
+        </span>
+      </div>
+    <% end %>
     <main class="container">
       <%= yield %>
     </main>

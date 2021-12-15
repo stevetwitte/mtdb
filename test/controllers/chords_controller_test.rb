@@ -1,8 +1,8 @@
-require "test_helper"
+require 'test_helper'
 
 class ChordsControllerTest < ActionDispatch::IntegrationTest
-  test "should get search" do
-    get chords_search_url
+  test 'should get search' do
+    get find_by_notes_chords_url
     assert_response :success
   end
 end

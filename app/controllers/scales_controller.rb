@@ -4,6 +4,7 @@ class ScalesController < ApplicationController
   include Coltrane::Theory
 
   def find_by_root_note
+    @breadcrumbs = 'SCALES <strong>></strong> PIANO'
     @scale_types = Scale.standard_scales
   end
 

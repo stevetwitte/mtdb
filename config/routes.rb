@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'chords#find_by_notes'
+  root 'home#index'
+
+  get 'home/index'
 
   resources :chords, only: [] do
     collection do
