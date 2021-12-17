@@ -27,7 +27,7 @@ export default class extends Controller {
 
     } else {
 
-      let note = new Audio('audio/piano/' + targetElement.dataset.keyName + '.mp3');
+      let note = new Audio('/audio/piano/' + targetElement.dataset.keyName + '.mp3');
       note.play();
 
       this.selectedNotes.push(targetElement.dataset.keyName);

@@ -1,24 +1,62 @@
 <div class="m-auto text-left">
-  <div class="bg-slate-600 text-slate-300 max-w-5xl">
-    <div class="bg-slate-500 w-full">
-      <h2 class="mx-4">SHORTCUTS</h2>
+  <div class="bg-slate-200 max-w-5xl rounded">
+    <div class="bg-slate-300 text-slate-500 w-full rounded-tl rounded-tr">
+      <h2 class="p-4">SHORTCUTS</h2>
     </div>
     <div class="flex flex-wrap items-center justify-center mt-4 p-2 pb-6">
-      <div class="m-4 text-center bg-slate-400 p-12">
-        <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-24 m-auto' %>
-        <span class="uppercase text-black text-lg">Explore</span>
+      <div class="m-4 text-center bg-slate-300 p-12 rounded">
+        <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-24 m-auto opacity-60' %>
+        <span class="uppercase text-slate-900 text-lg">Explore</span>
       </div>
-      <div class="m-4 text-center bg-slate-400 p-12">
-        <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-24 m-auto' %>
-        <span class="uppercase text-black text-lg">Library</span>
+      <div class="m-4 text-center bg-gray-300 p-12 rounded">
+        <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-24 m-auto opacity-60' %>
+        <span class="uppercase text-slate-900 text-lg">Library</span>
       </div>
-      <div class="m-4 text-center bg-slate-400 p-12">
-        <%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-24 m-auto' %>
-        <span class="uppercase text-black text-lg">Tools</span>
+      <div class="m-4 text-center bg-stone-300 p-12 rounded">
+        <%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-24 m-auto opacity-60' %>
+        <span class="uppercase text-slate-900 text-lg">Tools</span>
       </div>
-      <div class="m-4 text-center bg-slate-400 p-12">
-        <%= image_tag 'glyphicons-basic-137-cogwheel.svg', class: 'h-24 m-auto' %>
-        <span class="uppercase text-black text-lg">Settings</span>
+      <div class="m-4 text-center bg-zinc-300 p-12 rounded">
+        <%= image_tag 'glyphicons-basic-137-cogwheel.svg', class: 'h-24 m-auto opacity-60' %>
+        <span class="uppercase text-slate-900 text-lg">Settings</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="m-auto text-left mt-12">
+  <div class="bg-slate-200 max-w-5xl rounded">
+    <div class="bg-slate-300 text-slate-500 w-full rounded-tl rounded-tr">
+      <h2 class="p-4">RECENTLY SAVED</h2>
+    </div>
+    <div class="mt-2 p-4 pb-6 bg-grid-slate-100">
+      <div class="shadow-sm overflow-hidden">
+        <table class="border-collapse table-auto w-full text-sm">
+          <thead>
+            <tr>
+              <th class="border-b font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 text-left">Key</th>
+              <th class="border-b font-medium p-4 pt-0 pb-3 text-slate-400 text-left">Name</th>
+              <th class="border-b font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 text-left">Type</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr>
+              <td class="border-b border-slate-100 p-4 pl-8 text-slate-500">A</td>
+              <td class="border-b border-slate-100 p-4 text-slate-500">Melodic Minor</td>
+              <td class="border-b border-slate-100 p-4 pr-8 text-slate-500">Scale</td>
+            </tr>
+            <tr>
+              <td class="border-b border-slate-100 p-4 pl-8 text-slate-500">C</td>
+              <td class="border-b border-slate-100 p-4 text-slate-500">Harmonic Minor</td>
+              <td class="border-b border-slate-100 p-4 pr-8 text-slate-500">Scale</td>
+            </tr>
+            <tr>
+              <td class="border-b border-slate-100 p-4 pl-8 text-slate-500">D</td>
+              <td class="border-b border-slate-100 p-4 text-slate-500">Minor</td>
+              <td class="border-b border-slate-100 p-4 pr-8 text-slate-500">Chord</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

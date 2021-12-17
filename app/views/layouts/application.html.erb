@@ -10,32 +10,41 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-slate-400">
-    <header class="px-24 py-4 items-center bg-slate-200">
-      <nav class="flex items-end">
-        <h1 class="font-sans font-medium ml-6 text-lg text-slate-800 leading-tight">MUSIC THEORY DB</h1>
-        <div class="mx-4 text-center ml-24">
-          <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-6 m-auto' %>
-        </div>
-        <div class="mx-4 text-center">
-          <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-6 m-auto' %>
-        </div>
-        <div class="mx-4 text-center">
-          <%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-6 m-auto' %>
-        </div>
-        <div class="mx-4 text-center">
-          <%= image_tag 'glyphicons-basic-137-cogwheel.svg', class: 'h-6 m-auto' %>
-        </div>
-      </nav>
+  <body class="bg-slate-100 subpixel-antialiased">
+    <header class="py-2 bg-slate-200">
+      <div class="container mx-auto">
+        <nav class="flex items-center justify-between max-w-5xl">
+          <h1 class="font-sans font-medium text-lg text-slate-600 leading-tight">MUSIC THEORY DB</h1>
+          <div class="flex items-center">
+            <div class="mx-4 text-center ml-24">
+              <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-6 m-auto opacity-60' %>
+            </div>
+            <div class="mx-4 text-center">
+              <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-6 m-auto opacity-60' %>
+            </div>
+            <div class="mx-4 text-center">
+              <%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-6 m-auto opacity-60' %>
+            </div>
+            <div class="mx-4 text-center">
+              <%= image_tag 'glyphicons-basic-137-cogwheel.svg', class: 'h-6 m-auto opacity-60' %>
+            </div>
+            <div class="mx-4 text-center">
+              <%= image_tag 'glyphicons-basic-600-menu.svg', class: 'h-6 opacity-60' %>
+            </div>
+          </div>
+        </nav>
+      </div>
     </header>
     <% if @breadcrumbs.present? %>
-      <div class="bg-slate-700 text-slate-200 p-2 pl-24">
-        <span class="ml-6">
-          <%= @breadcrumbs.html_safe %>
-        </span>
+      <div class="container mx-auto">
+        <div class="text-slate-500 py-2">
+          <span>
+            <%= @breadcrumbs.html_safe %>
+          </span>
+        </div>
       </div>
     <% end %>
-    <main class="container">
+    <main class="container mx-auto py-12">
       <%= yield %>
     </main>
   </body>

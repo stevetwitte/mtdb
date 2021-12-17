@@ -1,6 +1,6 @@
 <div id="scale">
-  <div class="m-auto" data-controller="piano-scale-search">
-    <div class="text-center pt-24">
+  <div data-controller="piano-scale-search">
+    <div class="text-left pt-24">
       <%= form_with(url: search_scales_path) do |form| %>
         <%= form.select :scale_type, options_for_select(scale_types, scale_type) %>
         <%= form.text_field :query, hidden: true %>
