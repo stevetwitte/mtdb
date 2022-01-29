@@ -4,7 +4,7 @@ class ChordsController < ApplicationController
   include Coltrane::Theory
 
   def find_by_notes
-    @breadcrumbs = 'TOOLS <strong>></strong> CHORD FINDER'
+    @breadcrumbs = 'TOOLS <strong>&gt;</strong> CHORD FINDER'
   end
 
   def search

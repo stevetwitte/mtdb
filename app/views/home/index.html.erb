@@ -3,7 +3,7 @@
     <div class="bg-slate-300 text-slate-500 w-full rounded-tl rounded-tr">
       <h2 class="p-4">SHORTCUTS</h2>
     </div>
-    <div class="flex flex-wrap items-center justify-center mt-4 p-2 pb-6">
+    <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
       <div class="m-4 text-center bg-slate-300 p-12 rounded">
         <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-24 m-auto opacity-60' %>
         <span class="uppercase text-slate-900 text-lg">Explore</span>
@@ -12,10 +12,12 @@
         <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-24 m-auto opacity-60' %>
         <span class="uppercase text-slate-900 text-lg">Library</span>
       </div>
-      <div class="m-4 text-center bg-stone-300 p-12 rounded">
-        <%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-24 m-auto opacity-60' %>
-        <span class="uppercase text-slate-900 text-lg">Tools</span>
-      </div>
+      <%= link_to tools_index_path do %>
+        <div class="m-4 text-center bg-stone-300 p-12 rounded">
+          <%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-24 m-auto opacity-60' %>
+          <span class="uppercase text-slate-900 text-lg">Tools</span>
+        </div>
+      <% end %>
       <div class="m-4 text-center bg-zinc-300 p-12 rounded">
         <%= image_tag 'glyphicons-basic-137-cogwheel.svg', class: 'h-24 m-auto opacity-60' %>
         <span class="uppercase text-slate-900 text-lg">Settings</span>

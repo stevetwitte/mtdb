@@ -1,0 +1,21 @@
+<div class="m-auto text-left">
+  <div class="bg-slate-200 max-w-5xl rounded">
+    <div class="bg-slate-300 text-slate-500 w-full rounded-tl rounded-tr">
+      <h2 class="p-4">THEORY</h2>
+    </div>
+    <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
+      <%= link_to find_by_notes_chords_path do %>
+        <div class="m-4 text-center bg-slate-300 p-12 rounded">
+          <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-24 m-auto opacity-60' %>
+          <span class="uppercase text-slate-900 text-lg">Chord Finder</span>
+        </div>
+      <% end %>
+      <%= link_to find_by_root_note_scales_path do %>
+        <div class="m-4 text-center bg-gray-300 p-12 rounded">
+          <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-24 m-auto opacity-60' %>
+          <span class="uppercase text-slate-900 text-lg">Scale Viewer</span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

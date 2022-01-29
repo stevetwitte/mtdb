@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'tools/index'
   root 'home#index'
 
   get 'home/index'
+  get 'tools/index'
 
   resources :chords, only: [] do
     collection do
