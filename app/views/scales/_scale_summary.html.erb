@@ -1,52 +1,31 @@
 <div id="scale">
   <div data-controller="piano-scale-search">
-    <div class="text-left pt-24">
+    <div class="bg-slate-200 text-slate-500 w-full flex">
       <%= form_with(url: search_scales_path) do |form| %>
-        <%= form.select :scale_type, options_for_select(scale_types, scale_type) %>
+        <div class="flex">
+          <h2 class="p-2 pl-4">SCALE TYPE:</h2>
+          <%= form.select :scale_type,
+            options_for_select(scale_types, scale_type),
+            {},
+            { class: 'focus:outline-none focus:ring-transparent bg-slate-200 border-none' } %>
+          <h2 class="ml-4 p-2 pl-4">SEARCH BY:</h2>
+          <%= select_tag :note_input_type,
+            options_for_select([['Piano', 'piano']], 'piano'),
+            { class: 'focus:outline-none focus:ring-transparent bg-slate-200 border-none' } %>
+        </div>
         <%= form.text_field :query, hidden: true %>
       <% end %>
     </div>
 
-    <ul data-action="click->piano-scale-search#key" class="piano">
-      <% 2.times do %>
-        <li data-key-name="F" class="key white f <%= 'selected' if root_note == 'F' %> <%= 'in-scale' if note_names&.include?('F') %>">
-          <span>F</span>
-        </li>
-        <li data-key-name="F#" class="key black fs <%= 'selected' if root_note == 'F#' %> <%= 'in-scale' if note_names&.include?('F#') %>">
-          <span>F#</span>
-        </li>
-        <li data-key-name="G" class="key white g <%= 'selected' if root_note == 'G' %> <%= 'in-scale' if note_names&.include?('G') %>">
-          <span>G</span>
-        </li>
-        <li data-key-name="G#" class="key black gs <%= 'selected' if root_note == 'G#' %> <%= 'in-scale' if note_names&.include?('G#') %>">
-          <span>G#</span>
-        </li>
-        <li data-key-name="A" class="key white a <%= 'selected' if root_note == 'A' %> <%= 'in-scale' if note_names&.include?('A') %>">
-          <span>A</span>
-        </li>
-        <li data-key-name="A#" class="key black as <%= 'selected' if root_note == 'A#' %> <%= 'in-scale' if note_names&.include?('A#') %>">
-          <span>A#</span>
-        </li>
-        <li data-key-name="B" class="key white b <%= 'selected' if root_note == 'B' %> <%= 'in-scale' if note_names&.include?('B') %>">
-          <span>B</span>
-        </li>
-        <li data-key-name="C" class="key white c <%= 'selected' if root_note == 'C' %> <%= 'in-scale' if note_names&.include?('C') %>">
-          <span>C</span>
-        </li>
-        <li data-key-name="C#" class="key black cs <%= 'selected' if root_note == 'C#' %> <%= 'in-scale' if note_names&.include?('C#') %>">
-          <span>C#</span>
-        </li>
-        <li data-key-name="D" class="key white d <%= 'selected' if root_note == 'D' %> <%= 'in-scale' if note_names&.include?('D') %>">
-          <span>D</span>
-        </li>
-        <li data-key-name="D#" class="key black ds <%= 'selected' if root_note == 'D#' %> <%= 'in-scale' if note_names&.include?('D#') %>">
-          <span>D#</span>
-        </li>
-        <li data-key-name="E" class="key white e <%= 'selected' if root_note == 'E' %> <%= 'in-scale' if note_names&.include?('E') %>">
-          <span>E</span>
-        </li>
-      <% end %>
-    </ul>
+    <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
+      <%= render "scales/piano_component",
+        root_note: root_note,
+        note_names: note_names  %>
+    </div>
+
+    <div class="bg-slate-200 text-slate-500 w-full flex">
+      <h2 class="p-2 pl-4">RESULT</h2>
+    </div>
 
     <div class="m-auto text-center max-w-4xl">
 

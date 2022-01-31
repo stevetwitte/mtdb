@@ -3,7 +3,7 @@
     <div class="bg-slate-200 text-slate-500 w-full flex">
       <h2 class="p-2 pl-4">SEARCH BY:</h2>
       <%= select_tag :note_input_type,
-        options_for_select([['PIANO', 'piano']], 'piano'),
+        options_for_select([['Piano', 'piano']], 'piano'),
         { class: 'focus:outline-none focus:ring-transparent bg-slate-200 border-none' } %>
     </div>
 
@@ -14,7 +14,7 @@
             <%= form.text_field :query, hidden: true %>
           <% end %>
         </div>
-        <%= render "shared/piano_component" %>
+        <%= render "chords/piano_component" %>
       </div>
     </div>
 

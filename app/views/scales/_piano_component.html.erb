@@ -1,0 +1,40 @@
+<ul data-action="click->piano-scale-search#key" class="piano">
+  <% 2.times do %>
+    <li data-key-name="F" class="key white f <%= 'selected' if root_note == 'F' %> <%= 'in-scale' if note_names&.include?('F') %>">
+      <span>F</span>
+    </li>
+    <li data-key-name="F#" class="key black fs <%= 'selected' if root_note == 'F#' %> <%= 'in-scale' if note_names&.include?('F#') %>">
+      <span>F#</span>
+    </li>
+    <li data-key-name="G" class="key white g <%= 'selected' if root_note == 'G' %> <%= 'in-scale' if note_names&.include?('G') %>">
+      <span>G</span>
+    </li>
+    <li data-key-name="G#" class="key black gs <%= 'selected' if root_note == 'G#' %> <%= 'in-scale' if note_names&.include?('G#') %>">
+      <span>G#</span>
+    </li>
+    <li data-key-name="A" class="key white a <%= 'selected' if root_note == 'A' %> <%= 'in-scale' if note_names&.include?('A') %>">
+      <span>A</span>
+    </li>
+    <li data-key-name="A#" class="key black as <%= 'selected' if root_note == 'A#' %> <%= 'in-scale' if note_names&.include?('A#') %>">
+      <span>A#</span>
+    </li>
+    <li data-key-name="B" class="key white b <%= 'selected' if root_note == 'B' %> <%= 'in-scale' if note_names&.include?('B') %>">
+      <span>B</span>
+    </li>
+    <li data-key-name="C" class="key white c <%= 'selected' if root_note == 'C' %> <%= 'in-scale' if note_names&.include?('C') %>">
+      <span>C</span>
+    </li>
+    <li data-key-name="C#" class="key black cs <%= 'selected' if root_note == 'C#' %> <%= 'in-scale' if note_names&.include?('C#') %>">
+      <span>C#</span>
+    </li>
+    <li data-key-name="D" class="key white d <%= 'selected' if root_note == 'D' %> <%= 'in-scale' if note_names&.include?('D') %>">
+      <span>D</span>
+    </li>
+    <li data-key-name="D#" class="key black ds <%= 'selected' if root_note == 'D#' %> <%= 'in-scale' if note_names&.include?('D#') %>">
+      <span>D#</span>
+    </li>
+    <li data-key-name="E" class="key white e <%= 'selected' if root_note == 'E' %> <%= 'in-scale' if note_names&.include?('E') %>">
+      <span>E</span>
+    </li>
+  <% end %>
+</ul>
