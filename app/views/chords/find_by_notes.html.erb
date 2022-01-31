@@ -1,14 +1,27 @@
-<div class="m-auto">
-  <div class="m-auto" data-controller="piano-chord-search">
-    <div>
-      <%= form_with(url: search_chords_path) do |form| %>
-        <%= form.text_field :query, hidden: true %>
-      <% end %>
+<div class="m-auto text-left">
+  <div class="max-w-5xl">
+    <div class="bg-slate-200 text-slate-500 w-full flex">
+      <h2 class="p-2 pl-4">SEARCH BY:</h2>
+      <%= select_tag :note_input_type,
+        options_for_select([['PIANO', 'piano']], 'piano'),
+        { class: 'focus:outline-none focus:ring-transparent bg-slate-200 border-none' } %>
     </div>
 
-    <%= render "shared/piano_component" %>
+    <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
+      <div data-controller="piano-chord-search">
+        <div>
+          <%= form_with(url: search_chords_path) do |form| %>
+            <%= form.text_field :query, hidden: true %>
+          <% end %>
+        </div>
+        <%= render "shared/piano_component" %>
+      </div>
+    </div>
 
+    <div class="bg-slate-200 text-slate-500 w-full flex">
+      <h2 class="p-2 pl-4">RESULT</h2>
+    </div>
+
+    <%= render "chord_summary", chord: @chord, error: @error %>
   </div>
-
-  <%= render "chord_summary", chord: @chord, error: @error %>
 </div>

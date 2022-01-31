@@ -1,8 +1,7 @@
 .piano {
-  height: 18.875em;
-  width: 62em;
   position: relative;
   box-sizing: border-box;
+  border-top: 1px solid #818995;
 }
 
 .key {
@@ -19,11 +18,10 @@
   height: 16em;
   width: 4em;
   z-index: 1;
-  border-left: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
-  border-radius: 0 0 5px 5px;
+  border-left: 1px solid #818995;
+  border-bottom: 1px solid #818995; 
   box-sizing: border-box;
-  background: linear-gradient(to bottom,#eee 0%,#fff 100%);
+  background: linear-gradient(to bottom,#cbd5e1 0%,#e2e8f0 100%);
 }
 
 .piano .black {
@@ -31,10 +29,9 @@
   width: 2em;
   margin: 0 0 0 -1em;
   z-index: 2;
-  border: 1px solid #000;
-  border-radius: 0 0 3px 3px;
+  border: 1px solid #818995;
   box-sizing: border-box;
-  background: linear-gradient(45deg,#222 0%,#555 100%);
+  background: linear-gradient(45deg,#1e293b 0%,#475569 100%); 
 }
 
 .g,.a,.b,.d,.e {
@@ -42,14 +39,13 @@
   box-sizing: border-box;
 }
 
-.piano .key: first-child {
-  border-radius: 5px 0 5px 5px;
+.piano .key:first-child {
   box-sizing: border-box;
 }
 
-.piano .key: last-child {
-  border-radius: 0 5px 5px 5px;
+.piano .key:last-child {
   box-sizing: border-box;
+  border-right: 1px solid #818995; 
 }
 
 .piano .white span {
@@ -70,17 +66,17 @@
 }
 
 .piano .white.selected {
-  background: linear-gradient(to bottom,#a5f296 0%,#fff 100%) !important;
+  background: linear-gradient(to bottom,#a5f296 0%,#e2e8f0 100%) !important;
 }
 
 .piano .black.selected {
-  background: linear-gradient(to bottom,#a5f296 0%,#000 100%) !important;
+  background: linear-gradient(to bottom,#a5f296 0%,#475569 100%) !important;
 }
 
 .piano .white.in-scale {
-  background: linear-gradient(to bottom,#96d4f2 0%,#fff 100%);
+  background: linear-gradient(to bottom,#96d4f2 0%,#e2e8f0 100%);
 }
 
 .piano .black.in-scale {
-  background: linear-gradient(to bottom,#96d4f2 0%,#000 100%);
+  background: linear-gradient(to bottom,#96d4f2 0%,#475569 100%);
 }

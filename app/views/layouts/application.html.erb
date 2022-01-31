@@ -33,9 +33,6 @@
               <% end %>
             </div>
             <div class="mx-4 text-center">
-              <%= image_tag 'glyphicons-basic-137-cogwheel.svg', class: 'h-6 m-auto opacity-60' %>
-            </div>
-            <div class="mx-4 text-center">
               <%= image_tag 'glyphicons-basic-600-menu.svg', class: 'h-6 opacity-60' %>
             </div>
           </div>
@@ -52,6 +49,8 @@
       </div>
     <% end %>
     <main class="container mx-auto py-12">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
   </body>
