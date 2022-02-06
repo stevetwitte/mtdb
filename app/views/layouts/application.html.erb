@@ -8,14 +8,15 @@
     <%= stylesheet_link_tag "tailwind_styles", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "https://unpkg.com/alpinejs", "data-turbo-track": "reload", defer: "defer" %>
   </head>
 
   <body class="bg-slate-100 subpixel-antialiased">
     <header class="py-2 bg-slate-200">
       <div class="container mx-auto">
-        <nav class="flex items-center justify-between max-w-5xl">
+        <nav x-data="{ open: false }" class="flex items-center justify-between max-w-5xl">
           <h1 class="font-sans font-medium text-lg text-slate-600 leading-tight">MUSIC THEORY DB</h1>
-          <div class="flex items-center">
+          <div class="flex items-center relative">
             <div class="mx-4 text-center ml-24">
               <%= link_to home_index_path do %>
                 <%= image_tag 'glyphicons-basic-21-home.svg', class: 'h-6 m-auto opacity-60' %>
@@ -32,8 +33,42 @@
                 <%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-6 m-auto opacity-60' %>
               <% end %>
             </div>
-            <div class="mx-4 text-center">
-              <%= image_tag 'glyphicons-basic-600-menu.svg', class: 'h-6 opacity-60' %>
+            <button @click="open = !open"
+                    class="mx-4 text-center"
+                    type="button"
+                    aria-expanded="false" aria-haspopup="true">
+              <%= image_tag 'glyphicons-basic-600-menu.svg', class: 'h-6 opacity-60 cursor-pointer' %>
+            </button>
+            <div class="origin-top-right absolute right-0 top-10 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                  tabindex="-1"
+                  style="display: none;"
+                  @click.away="open = false"
+                  x-show="open">
+              <div class="py-1" role="none">
+                <a href="#" class="text-slate block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
+                <a href="#" class="text-slate block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Help</a>
+                <a href="#" class="text-slate block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">About</a>
+
+                <% if user_signed_in? %>
+                  <%= link_to 'Sign Out',
+                    destroy_user_session_path,
+                    id: 'menu-item-3',
+                    class: 'text-slate block px-4 py-2 text-sm',
+                    role: 'menuitem',
+                    tabindex: '-1',
+                    data: { 'turbo-method': :delete } %>
+                <% else %>
+                  <%= link_to 'Sign Up',
+                    new_user_registration_path,
+                    id: 'menu-item-4',
+                    class: 'text-slate block px-4 py-2 text-sm',
+                    role: 'menuitem',
+                    tabindex: '-1' %>
+                <% end %>
+              </div>
             </div>
           </div>
         </nav>
