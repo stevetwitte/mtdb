@@ -23,26 +23,42 @@
         note_names: note_names  %>
     </div>
 
-    <div class="bg-slate-200 text-slate-500 w-full flex">
-      <h2 class="p-2 pl-4">RESULT</h2>
-    </div>
+    <% if scale.present? %>
+      <div class="mt-4 pb-6 flex items-end">
+        <div>
+          <div class="text-lg font-sans font-thin">
+            name
+          </div>
+          <div class="bg-slate-200 text-lg font-sans font-thin pl-4">
+            <span class="text-6xl font-sans font-thin">
+              <span class="mr-4"><%= scale.tone.name %></span><%= scale.name %>
+            </span>
+          </div>
+        </div>
+        <div>
+          <div class="text-lg font-sans font-thin">
+            name
+          </div>
+          <div class="bg-slate-200 text-lg font-sans font-thin pl-4">
+            <% scale.notes.each do |n| %>
+              <span class="text-4xl mr-4">
+                <%= n.pretty_name %>
+              </span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="bg-slate-200 text-slate-500 w-1/2 p-4">
+        <h2 class="pb-2">HOW TO:</h2>
+        <p>Select a Scale Type from the drop down and click on/tap a note to show the scale details and highlight the scale's notes above.</p>
+      </div>
+    <% end %>
 
-    <div class="m-auto text-center max-w-4xl">
-
-      <% if scale.present? %>
-        <span class="text-6xl font-sans font-medium">
-          <%= scale.name %>
-          <br>
-          <%= scale.notes.map &:pretty_name %>
-        </span>
-      <% end %>
-
-      <% if error.present? %>
-        <span class="text-2xl font-sans">
-          <%= error %>
-        </span>
-      <% end %>
-
-    </div>
+    <% if error.present? %>
+      <span class="text-2xl font-sans">
+        <%= error %>
+      </span>
+    <% end %>
   </div>
 </div>
