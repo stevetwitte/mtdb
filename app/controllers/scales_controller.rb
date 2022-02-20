@@ -16,17 +16,28 @@ class ScalesController < ApplicationController
       @scale_type = params[:scale_type].strip
       @scale = Scale.fetch(@scale_type, @root_note)
 
-      # TODO: This should be fixed in coltrane or in a wrapper
+      # TODO: This should be moved to colrane wrapper
+      # it could also just be handled in the piano component
       @note_names = @scale.notes.map do |n|
         case n.name
-        when 'B#'
-          'C'
-        when 'C##'
-          'D'
         when 'E#'
           'F'
+        when 'B#'
+          'C'
+        when 'A##'
+          'B'
+        when 'B##'
+          'C#'
+        when 'C##'
+          'D'
+        when 'D##'
+          'E'
+        when 'E##'
+          'F#'
         when 'F##'
           'G'
+        when 'G##'
+          'A'
         else
           n.name
         end

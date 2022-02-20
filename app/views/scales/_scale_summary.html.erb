@@ -24,27 +24,47 @@
     </div>
 
     <% if scale.present? %>
-      <div class="mt-4 pb-6 flex items-end">
-        <div>
-          <div class="text-lg font-sans font-thin">
+      <div class="mt-4 pb-6 flex items-stretch justify-start">
+        <div class="mr-12">
+          <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
             name
           </div>
-          <div class="bg-slate-200 text-lg font-sans font-thin pl-4">
+          <div class="text-lg font-sans font-thin">
             <span class="text-6xl font-sans font-thin">
               <span class="mr-4"><%= scale.tone.name %></span><%= scale.name %>
             </span>
           </div>
         </div>
         <div>
-          <div class="text-lg font-sans font-thin">
-            name
+          <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
+            notes
           </div>
-          <div class="bg-slate-200 text-lg font-sans font-thin pl-4">
+          <div class="text-lg font-sans font-thin flex">
+            <% i = 1 %>
             <% scale.notes.each do |n| %>
-              <span class="text-4xl mr-4">
-                <%= n.pretty_name %>
-              </span>
+              <div class="text-center">
+                <span class="text-xl mr-8">
+                  <%= i %>
+                </span>
+                <br />
+                <span class="text-4xl mr-8">
+                  <%= n.pretty_name %>
+                </span>
+              </div>
+              <% i = i + 1 %>
             <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 pb-6 flex items-stretch justify-start">
+        <div>
+          <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
+            piano fingering
+          </div>
+          <div class="text-lg flex p-2 pt-4">
+            <%= render "scales/piano_fingering_component",
+              root_note: root_note,
+              note_names: note_names  %>
           </div>
         </div>
       </div>
