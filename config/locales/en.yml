@@ -30,4 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  'recently saved': 'recently saved'
+  'new user pull quote': 'Create a Free Account to Save Favorite Cords and Scales'
+  'shortcuts': 'shortcuts'
+  'explore': 'explore'
+  'library': 'library'
+  'tools': 'tools'
+  'settings': 'settings'

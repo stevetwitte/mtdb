@@ -1,26 +1,26 @@
 <div class="m-auto text-left">
   <div class="max-w-5xl rounded">
     <div class="bg-slate-200 text-slate-500 w-full">
-      <h2 class="p-2 pl-4">SHORTCUTS</h2>
+      <h2 class="p-2 pl-4"><%= t('shortcuts') %></h2>
     </div>
     <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
       <div class="m-4 text-center bg-slate-300 p-12 rounded">
         <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-24 m-auto opacity-60' %>
-        <span class="uppercase text-slate-900 text-lg">Explore</span>
+        <span class="uppercase text-slate-900 text-lg"><%= t('explore') %></span>
       </div>
       <div class="m-4 text-center bg-gray-300 p-12 rounded">
         <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-24 m-auto opacity-60' %>
-        <span class="uppercase text-slate-900 text-lg">Library</span>
+        <span class="uppercase text-slate-900 text-lg"><%= t('library') %></span>
       </div>
       <%= link_to tools_index_path do %>
         <div class="m-4 text-center bg-stone-300 p-12 rounded">
           <%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-24 m-auto opacity-60' %>
-          <span class="uppercase text-slate-900 text-lg">Tools</span>
+          <span class="uppercase text-slate-900 text-lg"><%= t('tools') %></span>
         </div>
       <% end %>
       <div class="m-4 text-center bg-zinc-300 p-12 rounded">
         <%= image_tag 'glyphicons-basic-137-cogwheel.svg', class: 'h-24 m-auto opacity-60' %>
-        <span class="uppercase text-slate-900 text-lg">Settings</span>
+        <span class="uppercase text-slate-900 text-lg"><%= t('settings') %></span>
       </div>
     </div>
   </div>
@@ -29,10 +29,17 @@
 <div class="m-auto text-left mt-12">
   <div class="max-w-5xl rounded">
     <div class="bg-slate-200 text-slate-500 w-full">
-      <h2 class="p-2 pl-4">RECENTLY SAVED</h2>
+      <h2 class="p-2 pl-4"><%= t('recently saved').upcase %></h2>
     </div>
-    <div class="mt-2 p-4 pb-6 bg-grid-slate-100">
-      <div class="shadow-sm overflow-hidden">
+    <div class="relative mt-2 p-4 pb-6 bg-grid-slate-100">
+      <div class="absolute flex justify-center items-center top-0 left-0 right-0 bottom-0 z-20">
+        <%= link_to t('new user pull quote'),
+                    new_user_registration_path,
+                    class: 'text-xl text-slate-900 opacity-100 bg-slate-200 p-4 px-6' %>
+      </div>
+      <div class="absolute flex justify-center items-center top-0 left-0 right-0 bottom-0 z-10 bg-slate-300 opacity-20">
+      </div>
+      <div class="shadow-sm overflow-hidden opacity-40">
         <table class="border-collapse table-auto w-full text-sm">
           <thead>
             <tr>
