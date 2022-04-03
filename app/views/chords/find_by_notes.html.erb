@@ -14,7 +14,12 @@
             <%= form.text_field :query, hidden: true %>
           <% end %>
         </div>
-        <%= render "chords/piano_component" %>
+        <div data-action="click->piano-scale-search#key">
+          <%= render "shared/piano_component",
+            controller_action: 'click->piano-chord-search#key',
+            root_note: nil,
+            note_names: [] %>
+        </div>
       </div>
     </div>
 

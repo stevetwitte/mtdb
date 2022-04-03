@@ -18,8 +18,9 @@
     </div>
 
     <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
-      <%= render "scales/piano_component",
+      <%= render "shared/piano_component",
         root_note: root_note,
+        controller_action: 'click->piano-scale-search#key',
         note_names: note_names  %>
     </div>
 
