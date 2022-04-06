@@ -3,6 +3,19 @@ require 'coltrane'
 class ChordsController < ApplicationController
   include Coltrane::Theory
 
+  def index
+    @breadcrumbs = 'CHORDS <strong>&gt;</strong> CHORDS BY TYPE'
+    @chord_qualities = ChordQuality::NAMES.map { |n| n[0] }
+  end
+
+  def show
+    @chord_quality = ChordQuality.new(name: CGI.unescape(params[:id]))
+    @breadcrumbs = "CHORDS <strong>&gt;</strong> #{@chord_quality.name}"
+    @chords = Note.all.map do |n|
+      Chord.new(root_note: n, quality: @chord_quality)
+    end
+  end
+
   def find_by_notes
     @breadcrumbs = 'TOOLS <strong>&gt;</strong> CHORD FINDER'
   end

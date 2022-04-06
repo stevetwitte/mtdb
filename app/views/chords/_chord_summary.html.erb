@@ -32,18 +32,20 @@
         </div>
       </div>
     </div>
-    <div class="mt-4 pb-6 flex items-stretch justify-start">
-      <div>
-        <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
-          piano fingering
-        </div>
-        <div class="text-lg flex p-2 pt-4">
-          <%= render "scales/piano_fingering_component",
-            root_note: chord.root_note.name,
-            note_names: chord.notes.map(&:name) %>
+    <% unless defined?(hide_instrument) && hide_instrument == true %>
+      <div class="mt-4 pb-6 flex items-stretch justify-start">
+        <div>
+          <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
+            piano fingering
+          </div>
+          <div class="text-lg flex p-2 pt-4">
+            <%= render "scales/piano_fingering_component",
+              root_note: chord.root_note.name,
+              note_names: chord.notes.map(&:name) %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% elsif error.present? %>
     <div class="bg-slate-200 text-slate-500 w-1/2 p-4">
       <h2 class="pb-2">ERROR:</h2>

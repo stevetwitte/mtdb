@@ -1,0 +1,15 @@
+<div class="m-auto text-left">
+  <div class="max-w-5xl">
+    <div class="sticky top-0 bg-slate-200 text-slate-500 w-56">
+      <h2 class="p-2 pl-4"><%= @chord_quality.name %></h2>
+    </div>
+    <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
+      <% @chords.each do |chord| %>
+        <div class="m-4 w-full text-center bg-slate-300 pt-4 pb-2 pl-6 rounded">
+          <%= render "chord_summary", chord: chord, error: nil, hide_instrument: true %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

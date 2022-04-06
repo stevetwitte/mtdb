@@ -1,0 +1,17 @@
+<div class="m-auto text-left">
+  <div class="max-w-5xl">
+    <div class="bg-slate-200 text-slate-500 w-full">
+      <h2 class="p-2 pl-4 uppercase">Scales By Type</h2>
+    </div>
+    <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
+      <% @scale_types.each do |scale_type| %>
+        <%= link_to scale_path(id: url_encode(scale_type)) do %>
+          <div class="m-4 w-32 h-32 text-center bg-slate-300 p-2 rounded flex items-center justify-center">
+            <span class="text-slate-900 text-lg"><%= scale_type %></span>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

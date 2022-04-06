@@ -1,19 +1,25 @@
 <div class="m-auto text-left">
   <div class="max-w-5xl">
     <div class="bg-slate-200 text-slate-500 w-full">
-      <h2 class="p-2 pl-4 uppercase">General</h2>
+      <h2 class="p-2 pl-4">GENERAL</h2>
     </div>
     <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
-      <%= link_to find_by_notes_chords_path do %>
+      <%= link_to chords_path do %>
         <div class="m-4 text-center bg-slate-300 p-12 rounded">
           <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-24 m-auto opacity-60' %>
-          <span class="uppercase text-slate-900 text-lg">Chord Finder</span>
+          <span class="uppercase text-slate-900 text-lg">Chords</span>
         </div>
       <% end %>
-      <%= link_to find_by_root_note_scales_path do %>
+      <%= link_to scales_path do %>
         <div class="m-4 text-center bg-gray-300 p-12 rounded">
           <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-24 m-auto opacity-60' %>
-          <span class="uppercase text-slate-900 text-lg">Scale Viewer</span>
+          <span class="uppercase text-slate-900 text-lg">Scales</span>
+        </div>
+      <% end %>
+      <%= link_to notes_path do %>
+        <div class="m-4 text-center bg-gray-300 p-12 rounded">
+          <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-24 m-auto opacity-60' %>
+          <span class="uppercase text-slate-900 text-lg">Notes</span>
         </div>
       <% end %>
     </div>
