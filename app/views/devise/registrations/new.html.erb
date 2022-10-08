@@ -1,29 +1,37 @@
-<h2>Sign up</h2>
-
+<div class="max-w-3xl m-auto text-left mt-6 p-8 drac-bg-grey-alternative">
+  <h3 class="p-2 pl-4 uppercase text-center text-xl drac-text-white">Sign Up</h3>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="mt-4 drac-text-white">
+    <div>
+      <%= f.label :email, class: 'drac-text-white uppercase' %>
+      <%= f.email_field :email,
+        autofocus: true,
+        autocomplete: "email",
+        required: true,
+        class: 'drac-input drac-input-lg drac-input-white drac-text-white drac-m-xs' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="mt-4">
+    <%= f.label :password, class: 'drac-text-white uppercase' %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em class='drac-text-white'>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password,
+      autocomplete: "new-password",
+      required: true,
+      class: 'drac-input drac-input-lg drac-input-white drac-text-white drac-m-xs' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="mt-4">
+    <%= f.label :password_confirmation, class: 'drac-text-white uppercase' %>
+    <%= f.password_field :password_confirmation,
+      autocomplete: "new-password",
+      required: true,
+      class: 'drac-input drac-input-lg drac-input-white drac-text-white drac-m-xs' %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="mt-4 flex items-baseline justify-between">
+    <%= f.submit "Sign Up", class: 'drac-btn drac-bg-pink-purple drac-m-sm drac-text-black' %>
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

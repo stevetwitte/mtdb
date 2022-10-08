@@ -2,3 +2,14 @@
  *= require piano
  *= require_self
  */
+
+.drac-checkbox:not(.drac-switch)::after {
+  border: 5px solid var(--black);
+  border-left: 0;
+  border-top: 0;
+  height: 18px;
+  left: 7px;
+  top: 0px;
+  transform: rotate(var(--local-rotation,20deg));
+  width: 5px;
+}
