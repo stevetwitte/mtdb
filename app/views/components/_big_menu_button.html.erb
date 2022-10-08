@@ -1,0 +1,7 @@
+<%= link_to local_assigns[:link_path] do %>
+  <div class="drac-box <%= local_assigns[:bg_class] %> p-12 m-6 text-center">
+
+    <%= image_tag local_assigns[:image_path], class: 'h-24 m-auto' %>
+    <span class="text-2xl drac-line-height drac-text-black uppercase"><%= local_assigns[:text] %></span>
+  </div>
+<% end %>

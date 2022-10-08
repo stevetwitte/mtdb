@@ -1,74 +1,79 @@
 <div class="m-auto text-left">
-  <div class="max-w-5xl rounded">
-    <div class="bg-slate-200 text-slate-500 w-full">
-      <h2 class="p-2 pl-4 uppercase"><%= t('shortcuts') %></h2>
-    </div>
-    <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
-      <%= link_to theory_index_path do %>
-        <div class="m-4 text-center bg-slate-300 p-12 rounded">
-          <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-24 m-auto opacity-60' %>
-          <span class="uppercase text-slate-900 text-lg"><%= t('theory') %></span>
-        </div>
-      <% end %>
-      <div class="m-4 text-center bg-gray-300 p-12 rounded">
-        <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-24 m-auto opacity-60' %>
-        <span class="uppercase text-slate-900 text-lg"><%= t('library') %></span>
-      </div>
-      <%= link_to tools_index_path do %>
-        <div class="m-4 text-center bg-stone-300 p-12 rounded">
-          <%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-24 m-auto opacity-60' %>
-          <span class="uppercase text-slate-900 text-lg"><%= t('tools') %></span>
-        </div>
-      <% end %>
-      <div class="m-4 text-center bg-zinc-300 p-12 rounded">
-        <%= image_tag 'glyphicons-basic-137-cogwheel.svg', class: 'h-24 m-auto opacity-60' %>
-        <span class="uppercase text-slate-900 text-lg"><%= t('settings') %></span>
-      </div>
-    </div>
+  <div variant="subtle"
+    class="drac-box drac-card drac-card-subtle drac-border-pink drac-bg-cyan p-2 pl-4">
+    <h2 class="text-lg drac-text-pink uppercase"><%= t('shortcuts') %></h2>
   </div>
+  <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
+    <%= render "components/big_menu_button",
+      link_path: theory_index_path,
+      image_path: 'glyphicons-basic-422-book-library.svg',
+      bg_class: 'drac-bg-pink-purple',
+      text: t('theory') %>
+
+    <%= render "components/big_menu_button",
+      link_path: '',
+      image_path: 'glyphicons-basic-73-bookmark.svg',
+      bg_class: 'drac-bg-yellow-pink',
+      text: t('library') %>
+
+    <%= render "components/big_menu_button",
+      link_path: tools_index_path,
+      image_path: 'glyphicons-basic-5-settings.svg',
+      bg_class: 'drac-bg-cyan-green',
+      text: t('tools') %>
+
+    <%= render "components/big_menu_button",
+      link_path: '',
+      image_path: 'glyphicons-basic-137-cogwheel.svg',
+      bg_class: 'drac-bg-purple-cyan',
+      text: t('settings') %>
+
+</div>
 </div>
 
-<div class="m-auto text-left mt-12">
-  <div class="max-w-5xl rounded">
-    <div class="bg-slate-200 text-slate-500 w-full">
-      <h2 class="p-2 pl-4"><%= t('recently saved').upcase %></h2>
-    </div>
-    <div class="relative mt-2 p-4 pb-6 bg-grid-slate-100">
+<div class="m-auto text-left">
+  <div variant="subtle"
+    class="drac-box drac-card drac-card-subtle drac-border-pink drac-bg-cyan p-2 pl-4">
+    <h2 class="text-lg drac-text-pink uppercase"><%= t('recently saved') %></h2>
+  </div>
+  <div class="relative mt-2 p-4 pb-6">
+    <% unless user_signed_in? %>
       <div class="absolute flex justify-center items-center top-0 left-0 right-0 bottom-0 z-20">
         <%= link_to t('new user pull quote'),
-                    new_user_registration_path,
-                    class: 'text-xl text-slate-900 opacity-100 bg-slate-200 p-4 px-6' %>
+          new_user_registration_path,
+          class: 'text-xl opacity-100 p-4 px-6 drac-text-black text-2xl uppercase drac-border-pink border drac-bg-black drac-text-purple-secondary' %>
       </div>
-      <div class="absolute flex justify-center items-center top-0 left-0 right-0 bottom-0 z-10 bg-slate-300 opacity-20">
-      </div>
-      <div class="shadow-sm overflow-hidden opacity-40">
-        <table class="border-collapse table-auto w-full text-sm">
-          <thead>
-            <tr>
-              <th class="border-b font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 text-left">Key</th>
-              <th class="border-b font-medium p-4 pt-0 pb-3 text-slate-400 text-left">Name</th>
-              <th class="border-b font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 text-left">Type</th>
-            </tr>
-          </thead>
-          <tbody class="bg-white">
-            <tr>
-              <td class="border-b border-slate-100 p-4 pl-8 text-slate-500">A</td>
-              <td class="border-b border-slate-100 p-4 text-slate-500">Melodic Minor</td>
-              <td class="border-b border-slate-100 p-4 pr-8 text-slate-500">Scale</td>
-            </tr>
-            <tr>
-              <td class="border-b border-slate-100 p-4 pl-8 text-slate-500">C</td>
-              <td class="border-b border-slate-100 p-4 text-slate-500">Harmonic Minor</td>
-              <td class="border-b border-slate-100 p-4 pr-8 text-slate-500">Scale</td>
-            </tr>
-            <tr>
-              <td class="border-b border-slate-100 p-4 pl-8 text-slate-500">D</td>
-              <td class="border-b border-slate-100 p-4 text-slate-500">Minor</td>
-              <td class="border-b border-slate-100 p-4 pr-8 text-slate-500">Chord</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <% end %>
+    <% unless user_signed_in? %>
+      <div class="absolute flex justify-center items-center top-0 left-0 right-0 bottom-0 z-10 drac-bg-pink-purple opacity-20"></div>
+    <% end %>
+    <div class="shadow-sm overflow-hidden">
+      <table class="drac-table">
+        <thead>
+          <tr>
+            <th class="font-normal text-lg p-4 pl-0 pt-0 pb-3 text-left drac-text-pink uppercase">Key</th>
+            <th class="font-normal text-lg p-4 pl-0 pt-0 pb-3 text-left drac-text-pink uppercase">Name</th>
+            <th class="font-normal text-lg p-4 pl-0 pr-8 pt-0 pb-3 text-left drac-text-pink uppercase">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="drac-text-pink-purple text-lg">A</td>
+            <td class="drac-text-pink-purple text-lg">Melodic Minor</td>
+            <td class="drac-text-pink-purple text-lg">Scale</td>
+          </tr>
+          <tr>
+            <td class="drac-text-pink-purple text-lg">C</td>
+            <td class="drac-text-pink-purple text-lg">Harmonic Minor</td>
+            <td class="drac-text-pink-purple text-lg">Scale</td>
+          </tr>
+          <tr>
+            <td class="drac-text-pink-purple text-lg">D</td>
+            <td class="drac-text-pink-purple text-lg">Minor</td>
+            <td class="drac-text-pink-purple text-lg">Chord</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

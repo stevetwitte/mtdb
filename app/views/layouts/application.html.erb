@@ -5,85 +5,91 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
+    <link rel="stylesheet" href="/font-awesome.min.css" />
     <%= stylesheet_link_tag "tailwind_styles", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="/dracula-ui.css" />
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag "https://unpkg.com/alpinejs", "data-turbo-track": "reload", defer: "defer" %>
   </head>
 
-  <body class="bg-slate-100 subpixel-antialiased">
-    <header class="sticky top-0 py-2 bg-slate-200">
+  <body class="drac-bg-black subpixel-antialiased">
+    <header class="sticky top-0 py-2 drac-bg-black">
       <div class="container mx-auto">
-        <nav x-data="{ open: false }" class="flex items-center justify-between max-w-5xl">
-          <h1 class="font-sans font-medium text-lg text-slate-600 leading-tight">MUSIC THEORY DB</h1>
-          <div class="flex items-center relative">
-            <div class="mx-4 text-center ml-24">
-              <%= link_to home_index_path do %>
-                <%= image_tag 'glyphicons-basic-21-home.svg', class: 'h-6 m-auto opacity-60' %>
-              <% end %>
-            </div>
-            <div class="mx-4 text-center">
-              <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-6 m-auto opacity-60' %>
-            </div>
-            <div class="mx-4 text-center">
-              <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-6 m-auto opacity-60' %>
-            </div>
-            <div class="mx-4 text-center">
-              <%= link_to tools_index_path do %>
-                <%= image_tag 'glyphicons-basic-5-settings.svg', class: 'h-6 m-auto opacity-60' %>
-              <% end %>
-            </div>
-            <button @click="open = !open"
-                    class="mx-4 text-center"
-                    type="button"
-                    aria-expanded="false" aria-haspopup="true">
-              <%= image_tag 'glyphicons-basic-600-menu.svg', class: 'h-6 opacity-60 cursor-pointer' %>
-            </button>
-            <div class="origin-top-right absolute right-0 top-10 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="menu-button"
-                  tabindex="-1"
-                  style="display: none;"
-                  @click.away="open = false"
-                  x-show="open">
-              <div class="py-1" role="none">
-                <a href="#" class="text-slate block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
-                <a href="#" class="text-slate block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Help</a>
-                <a href="#" class="text-slate block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">About</a>
+        <nav x-data="{ open: false }" class="flex items-center justify-between">
+          <div class="drac-text-purple-secondary text-lg py-2">
+            <span>
+              MUSIC THEORY DB > <%= @breadcrumbs.try(:html_safe) %>
+            </span>
+          </div>
+          <div class="flex justify-between min-w-[50%]">
+            <%= link_to home_index_path do %>
+              <div class="mx-4 text-center ml-24">
+                <i class="fa fa-home drac-text-purple-secondary text-2xl"></i>
+              </div>
+            <% end %>
+            <%= link_to theory_index_path do %>
+              <div class="mx-4 text-center">
+                <i class="fa fa-music drac-text-purple-secondary text-2xl"></i>
+              </div>
+            <% end %>
+            <%= link_to tools_index_path do %>
+              <div class="mx-4 text-center">
+                <i class="fa fa-wrench drac-text-purple-secondary text-2xl"></i>
+              </div>
+            <% end %>
+            <div class="flex items-center relative">
+              <button @click="open = !open"
+                      class="mx-4 text-center"
+                      type="button"
+                      aria-expanded="false" aria-haspopup="true">
+                <i class="fa fa-bars drac-text-purple-secondary text-2xl"></i>
+              </button>
+              <div class="origin-top-right absolute right-0 top-10 w-48 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10 drac-bg-grey"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="menu-button"
+                    tabindex="-1"
+                    style="display: none;"
+                    @click.away="open = false"
+                    x-show="open">
+                <div class="pl-4 py-2" role="none">
+                  <a href="#" class="drac-text-purple-secondary block px-4 py-4 text-lg uppercase" role="menuitem" tabindex="-1" id="menu-item-1">Help</a>
+                  <a href="#" class="drac-text-purple-secondary block px-4 py-4 text-lg uppercase" role="menuitem" tabindex="-1" id="menu-item-2">About</a>
 
-                <% if user_signed_in? %>
-                  <%= link_to 'Sign Out',
-                    destroy_user_session_path,
-                    id: 'menu-item-3',
-                    class: 'text-slate block px-4 py-2 text-sm',
-                    role: 'menuitem',
-                    tabindex: '-1',
-                    data: { 'turbo-method': :delete } %>
-                <% else %>
-                  <%= link_to 'Sign Up',
-                    new_user_registration_path,
-                    id: 'menu-item-4',
-                    class: 'text-slate block px-4 py-2 text-sm',
-                    role: 'menuitem',
-                    tabindex: '-1' %>
-                <% end %>
+                  <% if user_signed_in? %>
+                    <a href="#" class="text-slate block px-4 py-4 text-lg uppercase" role="menuitem" tabindex="-1" id="menu-item-0">Settings</a>
+                    <%= link_to 'Sign Out',
+                      destroy_user_session_path,
+                      id: 'menu-item-3',
+                      class: 'drac-text-purple-secondary block px-4 py-4 text-lg uppercase',
+                      role: 'menuitem',
+                      tabindex: '-1',
+                      data: { 'turbo-method': :delete } %>
+                  <% else %>
+                    <%= link_to 'Sign Up',
+                      new_user_registration_path,
+                      id: 'menu-item-4',
+                      class: 'drac-text-purple-secondary block px-4 py-4 text-lg uppercase',
+                      role: 'menuitem',
+                      tabindex: '-1' %>
+
+                    <%= link_to 'Log In',
+                      new_user_session_path,
+                      id: 'menu-item-4',
+                      class: 'drac-text-purple-secondary block px-4 py-4 text-lg uppercase',
+                      role: 'menuitem',
+                      tabindex: '-1' %>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
         </nav>
       </div>
     </header>
-    <% if @breadcrumbs.present? %>
-      <div class="container mx-auto">
-        <div class="text-slate-500 py-2">
-          <span>
-            <%= @breadcrumbs.html_safe %>
-          </span>
-        </div>
-      </div>
-    <% end %>
-    <main class="container mx-auto py-12">
+    <main class="container mx-auto py-8">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
