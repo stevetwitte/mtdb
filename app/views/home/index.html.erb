@@ -1,7 +1,5 @@
 <div class="m-auto text-left">
-  <div class="border-2 rounded-md border-violet-400 p-2 pl-4">
-    <h2 class="text-lg text-violet-400 uppercase"><%= t('shortcuts') %></h2>
-  </div>
+  <%= render 'components/section_heading', text: @breadcrumbs %>
   <div class="flex flex-wrap items-center justify-start mt-4 p-2 pl-4 pb-6">
     <%= render "components/big_menu_button",
       link_path: theory_index_path,
@@ -30,9 +28,7 @@
 </div>
 
 <div class="m-auto text-left">
-  <div class="border-2 rounded-md border-violet-400 p-2 pl-4">
-    <h2 class="text-lg text-violet-400 uppercase"><%= t('recently saved') %></h2>
-  </div>
+  <%= render 'components/section_heading', text: t('recently saved') %>
   <div class="relative mt-4 p-2 pl-4 pb-6">
     <% unless user_signed_in? %>
       <div class="absolute flex justify-center items-center top-0 left-0 right-0 bottom-0 z-20">
@@ -55,19 +51,19 @@
         </thead>
         <tbody>
           <tr>
-            <td class="text-gray-200 text-lg pb-2">A</td>
-            <td class="text-gray-200 text-lg pb-2">Melodic Minor</td>
-            <td class="text-gray-200 text-lg pb-2">Scale</td>
+            <td class="text-gray-200 text-lg pb-2 pr-12">A</td>
+            <td class="text-gray-200 text-lg pb-2 pr-12">Melodic Minor</td>
+            <td class="text-gray-200 text-lg pb-2 pr-12">Scale</td>
           </tr>
           <tr>
-            <td class="text-gray-200 text-lg pb-2">C</td>
-            <td class="text-gray-200 text-lg pb-2">Harmonic Minor</td>
-            <td class="text-gray-200 text-lg pb-2">Scale</td>
+            <td class="text-gray-200 text-lg pb-2 pr-12">C</td>
+            <td class="text-gray-200 text-lg pb-2 pr-12">Harmonic Minor</td>
+            <td class="text-gray-200 text-lg pb-2 pr-12">Scale</td>
           </tr>
           <tr>
-            <td class="text-gray-200 text-lg pb-2">D</td>
-            <td class="text-gray-200 text-lg pb-2">Minor</td>
-            <td class="text-gray-200 text-lg pb-2">Chord</td>
+            <td class="text-gray-200 text-lg pb-2 pr-12">D</td>
+            <td class="text-gray-200 text-lg pb-2 pr-12">Minor</td>
+            <td class="text-gray-200 text-lg pb-2 pr-12">Chord</td>
           </tr>
         </tbody>
       </table>
