@@ -1,37 +1,37 @@
-<div class="max-w-3xl m-auto text-left mt-6 p-8 drac-bg-grey-alternative">
-  <h3 class="p-2 pl-4 uppercase text-center text-xl drac-text-white">Sign Up</h3>
+<div class="max-w-3xl m-auto text-left mt-6 p-8">
+  <h3 class="p-2 pl-4 uppercase text-center text-xl text-gray-100">Sign Up</h3>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="mt-4 drac-text-white">
+  <div class="mt-4 text-gray-200">
     <div>
-      <%= f.label :email, class: 'drac-text-white uppercase' %>
+      <%= f.label :email, class: 'text-gray-200 uppercase' %>
       <%= f.email_field :email,
         autofocus: true,
         autocomplete: "email",
         required: true,
-        class: 'drac-input drac-input-lg drac-input-white drac-text-white drac-m-xs' %>
+        class: 'form-input text-gray-200 bg-slate-700 w-full my-2 p-2 pl-4' %>
   </div>
 
   <div class="mt-4">
-    <%= f.label :password, class: 'drac-text-white uppercase' %>
+    <%= f.label :password, class: 'text-gray-200 uppercase' %>
     <% if @minimum_password_length %>
-      <em class='drac-text-white'>(<%= @minimum_password_length %> characters minimum)</em>
+      <em class='text-gray-200'>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password,
       autocomplete: "new-password",
       required: true,
-      class: 'drac-input drac-input-lg drac-input-white drac-text-white drac-m-xs' %>
+      class: 'form-input text-gray-200 bg-slate-700 w-full my-2 p-2 pl-4' %>
   </div>
 
   <div class="mt-4">
-    <%= f.label :password_confirmation, class: 'drac-text-white uppercase' %>
+    <%= f.label :password_confirmation, class: 'text-gray-200 uppercase' %>
     <%= f.password_field :password_confirmation,
       autocomplete: "new-password",
       required: true,
-      class: 'drac-input drac-input-lg drac-input-white drac-text-white drac-m-xs' %>
+      class: 'form-input text-gray-200 bg-slate-700 w-full my-2 p-2 pl-4' %>
   </div>
   <div class="mt-4 flex items-baseline justify-between">
-    <%= f.submit "Sign Up", class: 'drac-btn drac-bg-pink-purple drac-m-sm drac-text-black' %>
+    <%= f.submit "Sign Up", class: 'bg-gradient-to-br from-pink-400 to-purple-400 text-black text-lg px-4 py-2 rounded-md' %>
     <%= render "devise/shared/links" %>
   </div>
 <% end %>

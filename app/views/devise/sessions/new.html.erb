@@ -1,31 +1,31 @@
-<div class="max-w-3xl m-auto text-left mt-6 p-8 drac-bg-grey-alternative">
-  <h3 class="p-2 pl-4 uppercase text-center text-xl drac-text-white">Login to your account</h3>
+<div class="max-w-3xl m-auto text-left mt-6 p-8">
+  <h3 class="p-2 pl-4 uppercase text-center text-xl text-gray-200">Login to your account</h3>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="mt-4 drac-text-white">
+    <div class="mt-4 text-gray-200">
       <div>
-        <%= f.label :email, class: 'drac-text-white uppercase' %>
+        <%= f.label :email, class: 'text-gray-200 uppercase' %>
         <%= f.email_field :email,
           autofocus: true,
           autocomplete: "email",
           required: true,
-          class: 'drac-input drac-input-lg drac-input-white drac-text-white drac-m-xs' %>
+          class: 'form-input text-gray-200 bg-slate-700 w-full my-2 p-2 pl-4' %>
       </div>
       <div class="mt-4">
-        <%= f.label :password, class: 'drac-text-white uppercase' %>
+        <%= f.label :password, class: 'text-gray-200 uppercase' %>
         <%= f.password_field :password,
           autocomplete: "current-password",
           required: true,
-          class: 'drac-input drac-input-lg drac-input-white drac-text-white drac-m-xs' %>
+          class: 'form-input text-gray-200 bg-slate-700 w-full my-2 p-2 pl-4' %>
       </div>
       <% if devise_mapping.rememberable? %>
-        <div class="mt-4 drac-box text-right">
-          <%= f.check_box :remember_me, class: 'drac-checkbox drac-checkbox-purple' %>
-          <%= f.label :remember_me, class: 'drac-text-white uppercase' %>
+        <div class="my-4 text-right">
+          <%= f.check_box :remember_me, class: 'appearance-none checked:bg-violet-400', style: 'height: 20px; width: 20px; margin-top: -3px;' %>
+          <%= f.label :remember_me, class: 'text-gray-200 uppercase pt-2' %>
         </div>
       <% end %>
       <div class="flex items-baseline justify-between">
-        <%= f.submit "Log In", class: 'drac-btn drac-bg-pink-purple drac-m-sm drac-text-black' %>
+        <%= f.submit "Log In", class: 'bg-gradient-to-br from-pink-400 to-purple-400 text-black text-lg px-4 py-2 rounded-md' %>
         <%= render "devise/shared/links" %>
       </div>
     </div>
