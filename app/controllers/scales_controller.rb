@@ -8,19 +8,19 @@ class ScalesController < ApplicationController
                                          :search]
 
   def index
-    @breadcrumbs = 'SCALES <strong>&gt;</strong> SCALES BY TYPE'
+    @breadcrumbs = 'SCALES / SCALES BY TYPE'
   end
 
   def show
     @scale_type = Scale.send(CGI.unescape(params[:id]).downcase.gsub(' ', '_'))
-    @breadcrumbs = "SCALES <strong>&gt;</strong> #{@scale_type.name}"
+    @breadcrumbs = "SCALES / #{@scale_type.name}"
     @scales = Note.all.map do |n|
       Scale.send(CGI.unescape(params[:id]).downcase.gsub(' ', '_'), n.name)
     end
   end
 
   def find_by_root_note
-    @breadcrumbs = 'TOOLS <strong>&gt;</strong> SCALE VIEWER'
+    @breadcrumbs = 'TOOLS / SCALE VIEWER'
   end
 
   def search
