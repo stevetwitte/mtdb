@@ -1,24 +1,15 @@
-# README
+# MTDB (Music Theory DB)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails 7 using Hotwire (Turbo/Stimulus), ESM, and Tailwind
 
-Things you may want to cover:
+## Development
 
-* Ruby version
+Start development server and Postgres in Docker:
+```
+docker-compose up
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Start build server for Tailwind:
+```
+npx tailwindcss -i ./app/assets/stylesheets/tailwind_input_styles.css -o ./app/assets/stylesheets/tailwind_styles.css --watch
+```
