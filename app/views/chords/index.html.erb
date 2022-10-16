@@ -3,8 +3,8 @@
   <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
     <% @chord_qualities.each do |chord_quality| %>
       <%= link_to chord_path(id: url_encode(chord_quality)) do %>
-        <div class="m-4 w-32 h-32 text-center bg-slate-300 p-2 rounded flex items-center justify-center">
-          <span class="text-slate-900 text-lg"><%= chord_quality %></span>
+        <div class="m-4 w-32 h-32 text-center p-2 rounded flex items-center justify-center border-2 rounded-md border-violet-400 bg-gray-900">
+          <span class="text-violet-200 text-lg"><%= chord_quality %></span>
         </div>
       <% end %>
     <% end %>
