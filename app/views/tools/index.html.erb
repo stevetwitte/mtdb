@@ -1,21 +1,15 @@
 <div class="m-auto text-left">
-  <div class="max-w-5xl">
-    <div class="bg-slate-200 text-slate-500 w-full">
-      <h2 class="p-2 pl-4 uppercase">General</h2>
-    </div>
-    <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
-      <%= link_to find_by_notes_chords_path do %>
-        <div class="m-4 text-center bg-slate-300 p-12 rounded">
-          <%= image_tag 'glyphicons-basic-422-book-library.svg', class: 'h-24 m-auto opacity-60' %>
-          <span class="uppercase text-slate-900 text-lg">Chord Finder</span>
-        </div>
-      <% end %>
-      <%= link_to find_by_root_note_scales_path do %>
-        <div class="m-4 text-center bg-gray-300 p-12 rounded">
-          <%= image_tag 'glyphicons-basic-73-bookmark.svg', class: 'h-24 m-auto opacity-60' %>
-          <span class="uppercase text-slate-900 text-lg">Scale Viewer</span>
-        </div>
-      <% end %>
-    </div>
+  <%= render 'components/section_heading', text: @breadcrumbs, back_path: home_index_path %>
+  <div class="flex flex-wrap items-center justify-start mt-4 p-2 pl-4">
+    <%= render "components/big_menu_button",
+      link_path: find_by_notes_chords_path,
+      image_path: 'glyphicons-basic-422-book-library.svg',
+      bg_class: 'bg-gradient-to-br from-pink-400 to-cyan-400',
+      text: 'Chord Finder' %>
+    <%= render "components/big_menu_button",
+      link_path: find_by_root_note_scales_path,
+      image_path: 'glyphicons-basic-73-bookmark.svg',
+      bg_class: 'bg-gradient-to-br from-purple-400 to-yellow-400',
+      text: 'Scale Viewer' %>
   </div>
 </div>

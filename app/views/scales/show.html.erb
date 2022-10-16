@@ -1,45 +1,41 @@
 <div class="m-auto text-left">
-  <div class="max-w-5xl">
-    <div class="sticky top-0 bg-slate-200 text-slate-500 w-56">
-      <h2 class="p-2 pl-4"><%= @scale_type.name %></h2>
-    </div>
-    <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
-      <% @scales.each do |scale| %>
-        <div class="m-4 w-full text-center bg-slate-300 pt-4 pb-2 pl-6 rounded">
-          <div class="mt-4 pb-6 flex items-stretch justify-start">
-            <div class="mr-12">
-              <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
-                name
-              </div>
-              <div class="text-lg font-sans font-thin">
-                <span class="text-6xl font-sans font-thin">
-                  <span class="mr-4"><%= scale.tone.name %></span><%= scale.name %>
-                </span>
-              </div>
+  <%= render 'components/section_heading', text: @breadcrumbs, back_path: scales_path %>
+  <div class="flex flex-wrap items-center justify-start p-2 pl-4 pb-6">
+    <% @scales.each do |scale| %>
+      <div class="m-4 w-full text-center border-violet-400 bg-gray-900 pt-4 pb-2 pl-6 border-2 rounded-md border-violet-400 text-violet-200">
+        <div class="mt-4 pb-6 flex items-stretch justify-start">
+          <div class="mr-12">
+            <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
+              name
             </div>
-            <div>
-              <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
-                notes
-              </div>
-              <div class="text-lg font-sans font-thin flex">
-                <% i = 1 %>
-                <% scale.notes.each do |n| %>
-                  <div class="text-center">
-                    <span class="text-xl mr-8">
-                      <%= i %>
-                    </span>
-                    <br />
-                    <span class="text-4xl mr-8">
-                      <%= n.pretty_name %>
-                    </span>
-                  </div>
-                  <% i = i + 1 %>
-                <% end %>
-              </div>
+            <div class="text-lg font-sans">
+              <span class="text-6xl font-sans">
+                <span class="mr-4"><%= scale.tone.name %></span><%= scale.name %>
+            </span>
+            </div>
+          </div>
+          <div>
+            <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
+              notes
+            </div>
+            <div class="text-lg font-sans flex">
+              <% i = 1 %>
+              <% scale.notes.each do |n| %>
+                <div class="text-center">
+                  <span class="text-xl mr-8">
+                    <%= i %>
+                  </span>
+                  <br />
+                  <span class="text-4xl mr-8">
+                    <%= n.pretty_name %>
+                  </span>
+                </div>
+                <% i = i + 1 %>
+              <% end %>
             </div>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>

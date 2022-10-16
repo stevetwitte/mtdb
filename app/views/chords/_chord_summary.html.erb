@@ -1,21 +1,21 @@
-<div id="chord">
+<div id="chord" class="text-violet-200">
   <% if chord.present? %>
     <div class="mt-4 pb-6 flex items-stretch justify-start">
       <div class="mr-12">
-        <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
+        <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
           name
         </div>
-        <div class="text-lg font-sans font-thin">
-          <span class="text-6xl font-sans font-thin">
+        <div class="text-lg font-sans">
+          <span class="text-6xl font-sans">
             <span class="mr-4"><%= chord.name %></span>
           </span>
         </div>
       </div>
       <div>
-        <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
+        <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
           notes
         </div>
-        <div class="text-lg font-sans font-thin flex">
+        <div class="text-lg font-sans flex">
           <% i = 1 %>
           <% chord.notes.each do |n| %>
             <div class="text-center">
@@ -32,10 +32,10 @@
         </div>
       </div>
     </div>
-    <% unless defined?(hide_instrument) && hide_instrument == true %>
+    <% unless local_assigns[:hide_instrument] %>
       <div class="mt-4 pb-6 flex items-stretch justify-start">
         <div>
-          <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
+          <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
             piano fingering
           </div>
           <div class="text-lg flex p-2 pt-4">
@@ -47,12 +47,12 @@
       </div>
     <% end %>
   <% elsif error.present? %>
-    <div class="bg-slate-200 text-slate-500 w-1/2 p-4">
+    <div class="bg-slate-700 text-violet-200 w-1/2 p-4">
       <h2 class="pb-2">ERROR:</h2>
       <p><%= error %></p>
     </div>
   <% else %>
-    <div class="bg-slate-200 text-slate-500 w-1/2 p-4">
+    <div class="bg-slate-700 text-violet-200 w-1/2 p-4">
       <h2 class="pb-2">HOW TO:</h2>
       <p>Select a Scale Type from the drop down and click on/tap a note to show the scale details and highlight the scale's notes above.</p>
     </div>

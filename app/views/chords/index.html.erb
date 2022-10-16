@@ -1,6 +1,6 @@
 <div class="m-auto text-left">
   <%= render 'components/section_heading', text: @breadcrumbs, back_path: theory_index_path %>
-  <div class="flex flex-wrap items-center justify-start mt-4 p-2 pb-6">
+  <div class="flex flex-wrap items-center justify-start p-2 pl-4 pb-6">
     <% @chord_qualities.each do |chord_quality| %>
       <%= link_to chord_path(id: url_encode(chord_quality)) do %>
         <div class="m-4 w-32 h-32 text-center p-2 rounded flex items-center justify-center border-2 rounded-md border-violet-400 bg-gray-900">
