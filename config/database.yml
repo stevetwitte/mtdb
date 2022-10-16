@@ -21,4 +21,4 @@ production:
   <<: *default
   database: mtdb_production
   username: mtdb
-  password: <%= ENV["MTDB_DATABASE_PASSWORD"] %>
+  password: <%= ENV["DATABASE_URL"] %>
