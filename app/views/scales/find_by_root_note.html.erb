@@ -1,12 +1,10 @@
 <div class="m-auto text-left">
-  <div class="max-w-5xl">
-
-    <%= render "scale_summary",
-      scale: @scale,
-      scale_types: @scale_types,
-      root_note: @root_note,
-      scale_type: @scale_type,
-      note_names: @note_names,
-      error: @error %>
-  </div>
+  <%= render 'components/section_heading', text: @breadcrumbs, back_path: tools_index_path %>
+  <%= render "scale_summary",
+    scale: @scale,
+    scale_types: @scale_types,
+    root_note: @root_note,
+    scale_type: @scale_type,
+    note_names: @note_names,
+    error: @error %>
 </div>

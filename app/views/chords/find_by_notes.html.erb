@@ -1,14 +1,14 @@
 <div class="m-auto text-left">
   <%= render 'components/section_heading', text: @breadcrumbs, back_path: tools_index_path %>
-  <div class="flex flex-wrap items-center justify-start mt-4 p-2 pl-4">
-    <div class="bg-slate-200 text-slate-500 w-full flex">
+  <div class="mt-4 p-2 pl-4">
+    <div class="border-2 rounded-md border-violet-400 bg-gray-900 text-gray-200 flex w-[250px]">
       <h2 class="p-2 pl-4">SEARCH BY:</h2>
       <%= select_tag :note_input_type,
         options_for_select([['Piano', 'piano']], 'piano'),
-        { class: 'focus:outline-none focus:ring-transparent bg-slate-200 border-none' } %>
+        { class: 'focus:outline-none focus:ring-transparent bg-gray-900 border-none' } %>
     </div>
 
-    <div class="flex flex-wrap items-center justify-start">
+    <div class="flex flex-wrap items-center justify-start mt-4">
       <div data-controller="piano-chord-search">
         <div>
           <%= form_with(url: search_chords_path) do |form| %>

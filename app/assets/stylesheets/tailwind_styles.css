@@ -749,6 +749,10 @@ select {
   margin-top: 1.5rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -803,6 +807,38 @@ select {
 
 .w-48 {
   width: 12rem;
+}
+
+.w-56 {
+  width: 14rem;
+}
+
+.w-\[100px\] {
+  width: 100px;
+}
+
+.w-\[200px\] {
+  width: 200px;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[250px\] {
+  width: 250px;
+}
+
+.w-\[750px\] {
+  width: 750px;
+}
+
+.w-\[500px\] {
+  width: 500px;
+}
+
+.w-\[600px\] {
+  width: 600px;
 }
 
 .min-w-\[50\%\] {
@@ -986,6 +1022,10 @@ select {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-6 {
