@@ -1,0 +1,12 @@
+<div class="m-auto text-left">
+  <%= render 'components/section_heading', text: @breadcrumbs, back_path: theory_index_path %>
+  <div class="flex flex-wrap items-center justify-start p-2 pb-6">
+    <% @notes.each do |note| %>
+      <%= link_to scale_path(id: url_encode(note)) do %>
+        <div class="m-4 w-32 h-32 text-center p-2 rounded flex items-center justify-center border-2 rounded-md border-violet-400 bg-gray-900">
+          <span class="text-violet-200 text-lg"><%= note %></span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
