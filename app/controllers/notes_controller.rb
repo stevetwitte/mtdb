@@ -1,6 +1,6 @@
 require 'coltrane'
 
-class ChordsController < ApplicationController
+class NotesController < ApplicationController
   include Coltrane::Theory
 
   before_action :set_notes, only: :index
