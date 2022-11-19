@@ -19,6 +19,4 @@ test:
 
 production:
   <<: *default
-  database: mtdb_production
-  username: mtdb
-  password: <%= ENV["DATABASE_URL"] %>
+  url: <%= ENV.fetch("DATABASE_URL") %>
