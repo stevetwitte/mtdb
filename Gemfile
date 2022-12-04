@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
 
-ruby '3.1.2'
+ruby '3.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 7.0.0'
@@ -55,6 +55,7 @@ group :development, :test do
   # Start debugger with binding.b [https://github.com/ruby/debug]
   gem 'debug', '>= 1.0.0', platforms: %i[mri mingw x64_mingw]
 
+  gem 'dotenv-rails'
   gem 'rubocop', require: false
 end
 
