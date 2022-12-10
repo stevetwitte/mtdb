@@ -1,4 +1,4 @@
-<div id="scale" class="mt-4 p-2 pl-4">
+<div id="scale" class="mt-4 p-2 pl-4 text-violet-200">
   <div data-controller="piano-scale-search">
     <div class="border-2 rounded-md border-violet-400 bg-gray-900 text-gray-200 flex w-[600px]">
       <%= form_with(url: search_scales_path) do |form| %>
@@ -25,22 +25,22 @@
     </div>
 
     <% if scale.present? %>
-      <div class="mt-4 pb-6 flex items-stretch justify-start">
+      <div class="mt-8 pb-6 flex items-stretch justify-start">
         <div class="mr-12">
-          <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
+          <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
             name
           </div>
-          <div class="text-lg font-sans font-thin">
-            <span class="text-6xl font-sans font-thin">
+          <div class="text-lg font-sans">
+            <span class="text-6xl font-sans">
               <span class="mr-4"><%= scale.tone.name %></span><%= scale.name %>
             </span>
           </div>
         </div>
         <div>
-          <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
+          <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
             notes
           </div>
-          <div class="text-lg font-sans font-thin flex">
+          <div class="text-lg font-sans flex">
             <% i = 1 %>
             <% scale.notes.each do |n| %>
               <div class="text-center">
@@ -59,7 +59,7 @@
       </div>
       <div class="mt-4 pb-6 flex items-stretch justify-start">
         <div>
-          <div class="bg-slate-200 text-lg pl-4 font-sans font-thin">
+          <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
             piano fingering
           </div>
           <div class="text-lg flex p-2 pt-4">
