@@ -57,6 +57,8 @@ group :development, :test do
 
   gem 'dotenv-rails'
   gem 'rubocop', require: false
+  gem 'ruby-lsp', require: false
+  gem 'solargraph', require: false
 end
 
 group :development do
