@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'theory/index'
 
   resources :chords, only: [:index, :show] do
+    resources :roots, only: [:show]
+
     collection do
       get 'find-by-notes', to: 'chords#find_by_notes'
       post 'search'
