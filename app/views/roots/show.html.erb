@@ -1,6 +1,7 @@
 <div class="m-auto text-left">
-  <%= render 'components/section_heading', text: @breadcrumbs, back_path: chords_path %>
+  <%= render 'components/section_heading', text: @breadcrumbs, back_path: chord_path(@chord_quality.name) %>
   <div class="flex flex-wrap items-center justify-start p-2 pl-4 pb-6">
+    <%= render "chords/chord_summary", chord: @chord, error: nil, hide_instrument: false, show_link: false %>
   </div>
 </div>
 

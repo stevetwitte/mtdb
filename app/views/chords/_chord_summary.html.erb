@@ -1,37 +1,74 @@
 <div id="chord" class="text-violet-200">
   <% if chord.present? %>
-    <div class="mt-8 pb-6 flex items-stretch justify-start">
-      <div class="mr-12">
-        <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
-          name
-        </div>
-        <div class="text-lg font-sans">
-          <span class="text-6xl font-sans">
-            <span class="mr-4"><%= chord.name %></span>
-          </span>
-        </div>
-      </div>
-      <div>
-        <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
-          notes
-        </div>
-        <div class="text-lg font-sans flex">
-          <% i = 1 %>
-          <% chord.notes.each do |n| %>
-            <div class="text-center">
-              <span class="text-xl mr-8">
-                <%= i %>
-              </span>
-              <br />
-              <span class="text-4xl mr-8">
-                <%= n.pretty_name %>
+    <% if local_assigns[:show_link] %>
+      <%= link_to chord_root_path(chord_quality.name, chord.root_note.name.gsub('#', '_sharp').gsub('b', '_flat')) do %>
+        <div class="mt-8 pb-6 flex items-stretch justify-start">
+          <div class="mr-12">
+            <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
+              name
+            </div>
+            <div class="text-lg font-sans">
+              <span class="text-6xl font-sans">
+                <span class="mr-4"><%= chord.name %></span>
               </span>
             </div>
-            <% i = i + 1 %>
-          <% end %>
+          </div>
+          <div>
+            <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
+              notes
+            </div>
+            <div class="text-lg font-sans flex">
+              <% i = 1 %>
+              <% chord.notes.each do |n| %>
+                <div class="text-center">
+                  <span class="text-xl mr-8">
+                    <%= i %>
+                  </span>
+                  <br />
+                  <span class="text-4xl mr-8">
+                    <%= n.pretty_name %>
+                  </span>
+                </div>
+                <% i = i + 1 %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="mt-8 pb-6 flex items-stretch justify-start">
+        <div class="mr-12">
+          <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
+            name
+          </div>
+          <div class="text-lg font-sans">
+            <span class="text-6xl font-sans">
+              <span class="mr-4"><%= chord.name %></span>
+            </span>
+          </div>
+        </div>
+        <div>
+          <div class="bg-violet-400 text-slate-900 text-lg pl-4 font-sans">
+            notes
+          </div>
+          <div class="text-lg font-sans flex">
+            <% i = 1 %>
+            <% chord.notes.each do |n| %>
+              <div class="text-center">
+                <span class="text-xl mr-8">
+                  <%= i %>
+                </span>
+                <br />
+                <span class="text-4xl mr-8">
+                  <%= n.pretty_name %>
+                </span>
+              </div>
+              <% i = i + 1 %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
     <% unless local_assigns[:hide_instrument] %>
       <div class="mt-4 pb-6 flex items-stretch justify-start">
         <div>

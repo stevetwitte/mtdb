@@ -3,7 +3,7 @@
   <div class="flex flex-wrap items-center justify-start p-2 pl-4 pb-6">
     <% @chords.each do |chord| %>
       <div class="m-4 w-full text-center border-2 rounded-md border-violet-400 bg-gray-900 pt-4 pb-2 pl-6 rounded">
-        <%= render "chord_summary", chord: chord, error: nil, hide_instrument: true %>
+        <%= render "chord_summary", chord: chord, chord_quality: @chord_quality, error: nil, hide_instrument: true, show_link: true %>
       </div>
     <% end %>
   </div>
