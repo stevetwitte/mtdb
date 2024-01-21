@@ -9,3 +9,6 @@ application.register("piano-chord-search", PianoChordSearchController)
 
 import PianoScaleSearchController from "./piano_scale_search_controller.js"
 application.register("piano-scale-search", PianoScaleSearchController)
+
+import Notification from 'stimulus-notification'
+application.register('notification', Notification)

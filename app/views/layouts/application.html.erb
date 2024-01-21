@@ -7,7 +7,9 @@
 
 
     <link rel="stylesheet" href="/font-awesome.min.css" />
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "tailwind_styles", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag "https://unpkg.com/alpinejs", "data-turbo-track": "reload", defer: "defer" %>
@@ -87,8 +89,12 @@
       </div>
     </header>
     <main class="container mx-auto py-8">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice.present? %>
+        <%= render 'components/notification', message: notice, type: :notice %>
+      <% end %>
+      <% if alert.present? %>
+        <%= render 'components/notification', message: alert, type: :alert %>
+      <% end %>
       <%= yield %>
     </main>
   </body>
