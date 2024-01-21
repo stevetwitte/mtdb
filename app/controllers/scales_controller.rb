@@ -3,9 +3,9 @@ require 'coltrane'
 class ScalesController < ApplicationController
   include Coltrane::Theory
 
-  before_action :set_scale_types, only: [:index,
-                                         :find_by_root_note,
-                                         :search]
+  before_action :set_scale_types, only: %i[index
+                                           find_by_root_note
+                                           search]
 
   def index
     @breadcrumbs = 'SCALES / SCALES BY TYPE'
