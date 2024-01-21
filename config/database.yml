@@ -6,14 +6,16 @@ default: &default
 development:
   <<: *default
   database: mtdb_development
-  host: db
+  host: localhost
+  port: 5434
   username: postgres
   password: password
 
 test:
   <<: *default
   database: mtdb_test
-  host: db
+  host: localhost
+  port: 5434
   username: postgres
   password: password
 
