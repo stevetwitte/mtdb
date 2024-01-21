@@ -4,7 +4,7 @@ git_source(:github) { |_repo| 'https://github.com/#{repo}.git' }
 ruby '3.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 7.1.0'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails', '>= 3.4.1'
@@ -13,7 +13,7 @@ gem 'sprockets-rails', '>= 3.4.1'
 gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 6.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails', '>= 0.9.2'
@@ -46,8 +46,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # gem 'image_processing', '~> 1.2'
 
 # https://github.com/pedrozath/coltrane/wiki/Core-music-theory-library
-gem 'coltrane', git: 'https://github.com/stevetwitte/coltrane'
+# gem 'coltrane', git: 'https://github.com/stevetwitte/coltrane'
 # gem 'coltrane', path: '../coltrane'
+gem 'coltrane'
 
 gem 'devise'
 
