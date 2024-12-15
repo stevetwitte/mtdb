@@ -23,9 +23,63 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="bg-gray-800 subpixel-antialiased">
+    <header class="sticky top-0 py-2 bg-slate-700">
+      <div class="container mx-auto">
+        <nav x-data="{ open: false }" class="flex items-center justify-between">
+          <div class="text-gray-200 text-xl py-2">
+            <span class="font-black">MTDB (alpha)</span>
+          </div>
+          <div class="flex justify-between min-w-[50%]">
+            <%# link_to home_index_path do %>
+              <div class="mx-4 text-center ml-24">
+                <i class="fa fa-home text-gray-200 text-2xl"></i>
+              </div>
+            <%# end %>
+            <%# link_to theory_index_path do %>
+              <div class="mx-4 text-center">
+                <i class="fa fa-music text-gray-200 text-2xl"></i>
+              </div>
+            <%# end %>
+            <%# link_to tools_index_path do %>
+              <div class="mx-4 text-center">
+                <i class="fa fa-wrench text-gray-200 text-2xl"></i>
+              </div>
+            <%# end %>
+            <div class="flex items-center relative">
+              <button @click="open = !open"
+                      class="mx-4 text-center"
+                      type="button"
+                      aria-expanded="false" aria-haspopup="true">
+                <i class="fa fa-bars text-gray-200 text-2xl"></i>
+              </button>
+              <div class="origin-top-right absolute right-0 top-10 w-48 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10 bg-slate-800"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="menu-button"
+                    tabindex="-1"
+                    style="display: none;"
+                    @click.away="open = false"
+                    x-show="open">
+                <div class="pl-4 py-2" role="none">
+                  <a href="#" class="text-gray-200 block px-4 py-4 text-lg uppercase" role="menuitem" tabindex="-1" id="menu-item-1">Help</a>
+                  <a href="#" class="text-gray-200 block px-4 py-4 text-lg uppercase" role="menuitem" tabindex="-1" id="menu-item-2">About</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="container mx-auto py-8">
+      <% if notice.present? %>
+        <%= render 'components/notification', message: notice, type: :notice %>
+      <% end %>
+      <% if alert.present? %>
+        <%= render 'components/notification', message: alert, type: :alert %>
+      <% end %>
       <%= yield %>
     </main>
   </body>
+
 </html>
