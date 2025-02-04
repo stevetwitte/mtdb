@@ -41,6 +41,7 @@ gem 'thruster', require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'after_party'
+gem 'dry-monads', require: false
 gem 'tailwindcss-rails', '~> 3.0'
 
 group :development, :test do
